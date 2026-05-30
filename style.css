@@ -1,0 +1,26 @@
+.container-principal{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.card-item img{
+    margin: 10px;
+}
+.card-item img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.card-item img{
+    width: 200%;
+}
+.vertical{
+    width: 150px;
+}
+.horizontal{
+    width: 350px;
+}
