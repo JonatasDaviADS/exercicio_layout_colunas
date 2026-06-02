@@ -1,26 +1,46 @@
-.container-principal{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+/* Definições globais */
+body { font-family: verdana, sans-serif; margin: 0; }
+
+/* O Container da sua galeria (apenas Grid!) */
+.container-principal {
+    display: grid;
+    /* Define 4 colunas de tamanho proporcional */
+    grid-template-columns: repeat(4, 1fr);
+    /* Altura das linhas */
+    /*grid-template-rows: repeat(4, 200px);*/
+    grid-auto-rows: 200;
+    /* Espaçamento */
+    gap: 15px;
+    padding: 20px;
+    /* O "dense" preenche os espaços vazios (masonry) */
+    /*grid-auto-flow: dense;*/
+}
+.card-item { width: 100%; height: 100%; }
+.card-item img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 8px; }
+/* Regras de expansão baseadas na lógica do seu professor */
+/*.vertical { grid-row: span 2; }
+.horizontal { grid-column: span 2; }
+.grande { grid-column: span 2; grid-row: span 2; */
+
+/* As duas imagens especiais */
+.vertical-inicio { grid-column: 1; grid-row: 1 / span 2; }
+.vertical-fim { grid-column: 4; grid-row: 3 / span 2; }
+
+/* Ajuste das imagens */
+.card-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px; /* Boas práticas de UI */
 }
 
-
-.card-item img{
-    margin: 10px;
+/* Responsividade (Baseado na aula do professor) */
+@media (max-width: 900px) {
+    .container-principal { grid-template-columns: repeat(4, 1fr); }
 }
-.card-item img{
-    max-width: 100%;
-    height: auto;
-    display: block;
+@media (max-width: 700px) {
+    .container-principal { grid-template-columns: repeat(4, 1fr); }
 }
-.card-item img{
-    width: 200%;
-}
-.vertical{
-    width: 150px;
-}
-.horizontal{
-    width: 350px;
+@media (max-width: 500px) {
+    .container-principal { grid-template-columns: 1fr; }
 }
