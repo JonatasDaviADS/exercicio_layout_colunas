@@ -17,7 +17,7 @@ body { font-family: verdana, sans-serif; margin: 0; }
 }
 .card-item { width: 100%; height: 100%; }
 .card-item img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 8px; }
-/* Regras de expansão baseadas na lógica do seu professor */
+/* Regras de expansão */
 /*.vertical { grid-row: span 2; }
 .horizontal { grid-column: span 2; }
 .grande { grid-column: span 2; grid-row: span 2; */
@@ -34,7 +34,46 @@ body { font-family: verdana, sans-serif; margin: 0; }
     border-radius: 8px; /* Boas práticas de UI */
 }
 
-/* Responsividade (Baseado na aula do professor) */
+/*.texto-lateral{
+    position: fixed;
+    right: 10px;
+    top: 50%;
+
+    writing-mode: vertical-lr;
+    transform: translateY(-50%);
+
+    font-family: verdana, sans-serif;
+    font-weight: bold;
+    color: chartreuse;
+    padding: 10px;
+    z-index: 100;
+}
+*/
+header{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.pagina-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    padding: 20px;
+}
+main{
+    flex: 1;
+}
+.texto-lateral{
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-weight: bold;
+    color: firebrick;
+    padding-top: 20px;
+}
+
+/* Responsividade */
 @media (max-width: 900px) {
     .container-principal { grid-template-columns: repeat(4, 1fr); }
 }
